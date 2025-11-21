@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/script.js">
+
+    </script>
+    <title>Info 6B</title>
+</head>
+
+<body>
+    <h1>Bem vindo a FW2 turma Info B </h1>
+    <h2>
+        <%=2+2%>
+    </h2>
+    <!-- process.env.USERNAME =='Estudante' -->
+    <% if (process.env.USERNAME=='Marcelo' ) { %>
+        <h3>Usuário: <%= process.env.USERNAME %> </h3>
+    <%}%>
+    <% let frutas = ['maça','banana','mamão','pitaya','kiwi','caqui'] %>
+    <table>
+        <tr>
+            <th>Frutas</th>
+        </tr>
+        <% for (i=0; i < frutas.length ; i++) { %>
+            <tr>
+                <td><%= frutas[i] %></td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>

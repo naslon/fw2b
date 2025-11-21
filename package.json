@@ -1,0 +1,26 @@
+{
+  "name": "fw26b",
+  "version": "1.0.0",
+  "description": "codigos da disciplna de frameworks 2 ",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "env": "nodemon --env-file=.env app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Turma 6B Info.",
+  "license": "ISC",
+  "dependencies": {
+    "consign": "^0.1.6",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mongodb": "^6.20.0",
+    "nodemon": "^3.1.10"
+  },
+  "rewrites": [
+    {
+      "source": "/noticias",
+      "destination": "/route/portalnoticias/getnoticias.js"
+    }
+  ]
+}

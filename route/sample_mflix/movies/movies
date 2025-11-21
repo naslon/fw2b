@@ -1,0 +1,15 @@
+module.exports = (app) => {
+    app.get('/movies/:ano', async (req, res) => {
+        const ano = req.params.ano
+       // const endeletronico = req.params.ano
+        await app.DBClient.connect();
+        const resultado = await app.DBClient.db('sample_mflix')
+            .collection('movies')
+            .find({$and: [
+                    { year: new RegExp(ano, 'i') }
+                ]
+            })
+            .toArray();
+        res.json(resultado)
+    })
+}
